@@ -1,0 +1,10 @@
+// Set variables and reusable mixins
+@import '_global/mixins';
+
+// project
+@import '_project/variables.scss';
+@import '_project/base';
+@import '_project/form.scss';
+@import '_project/fonts.scss';
+@import '_project/mixins-fonts.scss';
+

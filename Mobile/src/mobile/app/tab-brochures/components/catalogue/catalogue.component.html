@@ -1,0 +1,37 @@
+<div class="mod-catalogue">
+  <div class="m-button-back">
+    <a routerLink="/home/prospekte">
+      <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 1.52344L3.03797 6.5L8 11.4766L6.48101 13L-3.85426e-07 6.5L6.48101 -1.32794e-07L8 1.52344Z" fill="#39646B"/>
+      </svg>
+      Zurück</a>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="m-arrow m-arrow--left">
+        <div class="m-button swiper-button-prev"
+             [class.disabled]="sliderTwo.isBeginningSlide" (click)="slidePrev(slideWithNav2)">
+        </div>
+      </ion-col>
+      <ion-col size="12" class="m-catalogue">
+        <swiper
+
+          [config]="config"
+          #slideWithNav2
+          (swiper)="onSwiper($event)"
+          (slideChange)="onSlideChange(sliderTwo,slideWithNav2)"
+          class="m-swiper">
+          <ng-template swiperSlide class="m-slider" *ngFor="let s of sliderTwo.slidesItems">
+            <img class="m-swiper-image" src="https://picsum.photos/400/600?t={{s.id}}" tappable (click)="openViewer('https://picsum.photos/400/600?t='+s.id)"/>
+          </ng-template>
+        </swiper>
+      </ion-col>
+      <ion-col class="m-arrow m-arrow--right">
+        <div class="m-button swiper-button-next"
+             [class.disabled]="sliderTwo.isEndSlide" (click)="slideNext(slideWithNav2)">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</div>

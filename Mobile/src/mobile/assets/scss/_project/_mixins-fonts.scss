@@ -1,0 +1,58 @@
+@import '../_global/mixins';
+
+@mixin fontfamily-primary() {
+  font-family: 'Open Sans';
+  font-weight: 400;
+}
+
+@mixin fontfamily-primary-bold() {
+  @include fontfamily-primary();
+  font-weight: 700;
+}
+
+// font family bold
+@mixin font-primary-13-18() {
+  @include fontfamily-primary();
+  @include font-size(13px);
+  @include line-height(18/13);
+}
+
+@mixin font-primary-15-20() {
+  @include fontfamily-primary();
+  @include font-size(15px);
+  @include line-height(20/15);
+}
+
+@mixin font-primary-15-21-bold() {
+  @include fontfamily-primary-bold();
+  @include font-size(15px);
+  @include line-height(21/15);
+}
+
+@mixin font-primary-20-27() {
+  @include fontfamily-primary();
+  @include font-size(20px);
+  @include line-height(27/20);
+}
+@mixin font-primary-10-14() {
+  @include fontfamily-primary();
+  @include font-size(10px);
+  @include line-height(14/10);
+}
+
+@mixin font-primary-22-30() {
+  @include fontfamily-primary();
+  @include font-size(22px);
+  @include line-height(30/22);
+}
+
+@mixin font-primary-25() {
+  @include fontfamily-primary-bold();
+  @include font-size(25px);
+  @include line-height(25/25);
+}
+@mixin font-primary-15() {
+  @include fontfamily-primary-bold();
+  @include font-size(15px);
+  @include line-height(15/15);
+}

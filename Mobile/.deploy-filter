@@ -1,0 +1,32 @@
+# Apache configurations
+P .htaccess
+P .htpasswd
+
+# Log files
+P *.log
+
+# Environment markers
+P /__DEV__
+P /__LIVE__
+
+# Google
+P /public/google*.html
+
+# Laravel specific
+P /app/
+P /bootstrap/
+P /config/
+P /database/
+P /lang/
+P /public/favicon.ico
+P /public/index.php
+P /public/robots.txt
+P /resources/
+P /routes/
+P /storage/
+P /vendor/
+P /artisan
+P /composer.json
+
+# Add project specific filters below
+P /tmp/

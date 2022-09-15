@@ -1,0 +1,148 @@
+.mod-form {
+	> .m-genders {
+		display: flex;
+		column-gap: 20px;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+
+		> .m-gender {
+			> label {
+				font-family: 'Open Sans';
+				font-size: 15px;
+				line-height: 20px;
+				color: $color-text;
+			}
+
+			> input {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				border-radius: 50%;
+				width: 20px;
+				height: 20px;
+				transition: 0.2s all linear;
+				margin-right: 8px;
+				background: $color-secondary;
+				position: relative;
+				top: 5px;
+
+				&:checked {
+					border: 5px solid $color-secondary;
+					background: $color-primary;
+				}
+			}
+		}
+
+		> .error {
+			color: $color-error;
+			margin-top: 5px;
+			display: block;
+			flex-basis: 100%;
+		}
+	}
+
+	> .m-input {
+		margin-bottom: 15px;
+
+		input {
+			background-color: $color-base-0;
+			border: 1px solid $color-base-70;
+			border-radius: 6px;
+			padding: 13px 15px 12px;
+			width: 100%;
+			color: $color-text;
+
+			&.ng-touched.ng-invalid {
+				border-color: $color-error;
+			}
+		}
+
+		&.is-date {
+			margin-bottom: 30px;
+
+			input {
+				max-width: 50%;
+
+				&[type="date"] {
+					margin: 0;
+					opacity: 0;
+					position: absolute;
+					left: 38px;
+					width: calc(50% - 38px);
+					padding: 13px 15px 12px;
+				}
+			}
+
+			> label {
+				margin-left: 10px;
+				color: $color-secondary;
+				line-height: 25px;
+				position: relative;
+
+				> svg {
+					position: absolute;
+					top: calc(50% - 12px);
+				}
+			}
+		}
+
+		> .error {
+			color: $color-error;
+			margin-top: 5px;
+			display: block;
+			flex-basis: 100%;
+		}
+	}
+
+	> .m-submit {
+		width: 100%;
+		padding-bottom: 50px;
+
+		> input {
+			font-family: "Open Sans";
+			font-size: 15px;
+			line-height: 21px;
+			font-weight: 700;
+			color: $color-base-70;
+			background: $color-primary;
+			border-radius: 40px;
+			padding: 13px 25px;
+			text-transform: uppercase;
+			border: 0;
+			margin: auto;
+			display: block;
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+
+	}
+
+	&.ng-submitted {
+		> .m-genders {
+			> .m-gender {
+				> input {
+					&.ng-invalid {
+						border: 10px $color-error solid;
+
+						& + label {
+							color: $color-error;
+						}
+					}
+				}
+			}
+		}
+
+		> .m-input {
+			input.ng-invalid {
+				border: 1px solid $color-error;
+			}
+		}
+	}
+}
+
+::placeholder {
+	color: $color-placeholder;
+}

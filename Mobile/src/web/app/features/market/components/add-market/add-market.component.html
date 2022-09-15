@@ -1,0 +1,29 @@
+<div class="mod-add-market">
+  <div class="m-wrapper">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="onSaveMarket()">
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="Name" [nzSpan]="7" nzRequired>Name</nz-form-label>
+        <nz-form-control nzErrorTip="Please Name!" [nzSpan]="12">
+          <input nz-input id="Name" formControlName="name" placeholder="Name"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="file" [nzSpan]="7" nzRequired>logo</nz-form-label>
+        <div class="m-upload">
+        <label class="m-btn-upload" for="file" >
+          <i nz-icon nzType="upload" nzTheme="outline"></i>Click to Upload</label>
+        <input  style="display: none" type="file" id="file" name="file" accept="image/png, image/jpeg" (change)="handleChange($event)">
+        <span class="m-file-name" *ngIf="uploadedFile">
+          <i nz-icon nzType="paper-clip" nzTheme="outline"></i>{{uploadedFile.name}}
+        </span>
+        </div>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field" nz-row class="register-area">
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          <button nz-button nzType="primary">save</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

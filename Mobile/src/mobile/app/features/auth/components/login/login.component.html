@@ -1,0 +1,32 @@
+<ion-content>
+  <div class="lay-login">
+    <div class="background"></div>
+    <div class="l-wrapper">
+      <div class="l-header">
+        <h1>Login</h1>
+      </div>
+      <p class="m-error" *ngIf="error">Falsche E-Mail oder Passwort Bitte überprüfen Sie die Eingabe</p>
+      <form class="mod-form" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+        <div class="m-input is-text">
+          <input email type="email" placeholder="E-Mail" required="required" name="email" ngModel #email="ngModel" value="test@email.com"/>
+          <span class="error" *ngIf="(email.invalid) && (email.value) && (email.touched)">Sie sollten das E-Mail-Format example@example.com respektieren</span>
+          <span class="error"
+                *ngIf="((email.invalid) && (!email.value) && (email.touched)) || ((email.invalid) && (!email.value) && (loginForm.submitted))">Das E-Mail-Feld ist erforderlich</span>
+        </div>
+        <div class="m-input is-text">
+          <input type="password" placeholder="Passwort" required="required" name="password" ngModel
+                 #password="ngModel" value="Test123456"/>
+          <span class="error" *ngIf="(password.invalid) && (password.value) && (password.touched)">Das Passwort sollte mindestens 8 Zeichen lang sein.</span>
+          <span class="error" *ngIf="(password.invalid) && (!password.value) && (password.touched || loginForm.submitted)">Das Passwortfeld ist erforderlich</span>
+        </div>
+        <div class="m-submit">
+          <input type="submit" value="Login"/>
+        </div>
+        <a class="m-forget-password" href="">Passwort vergessen?</a>
+        <p>Sie haben noch keinen Account?</p>
+        <a href="/register"> Klicken Sie hier, um sich zu registrieren.</a>
+      </form>
+    </div>
+  </div>
+</ion-content>
+

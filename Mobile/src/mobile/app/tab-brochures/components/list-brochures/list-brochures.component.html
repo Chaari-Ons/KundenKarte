@@ -1,0 +1,11 @@
+<ion-content>
+<div id="container" class="mod-brochure">
+  <div class="m-title">Prospekte</div>
+  <div class="m-medias">
+    <div  class="m-media  is-{{i}}" style="top: {{(brochures.length - i - 1)*20}}px;z-index:{{brochures.length - i}};" *ngFor="let brochure of brochures; let i = index" (click)="openBrochure(brochure.id)"  (cdkDragEnded)="checkposition($event)"   cdkDragLockAxis="x"  cdkDrag>
+      <img src="{{brochure.src}}" class="m-image is-{{i}}" style="width:calc(100% - {{i*40}}px)"/>
+    </div>
+  </div>
+
+</div>
+</ion-content>

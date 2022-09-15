@@ -1,0 +1,16 @@
+@import "./src/web/assets/sass/_common.scss";
+
+.m-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 24px;
+}
+
+.m-button-action {
+  margin-right: 10px;
+}
+.ant-modal-footer {
+  .mod-list-market & {
+    display:none;
+  }
+}

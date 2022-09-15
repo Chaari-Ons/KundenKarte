@@ -1,0 +1,26 @@
+
+// primary bold
+@mixin fontfamily-primary-bold() {
+    font-weight: 700;
+}
+
+// primary italic
+@mixin fontfamily-primary-italic() {
+    font-style: italic;
+}
+
+// primary bold italic
+@mixin fontfamily-primary-bolditalic() {
+    @include fontfamily-primary-bold();
+    font-style: italic;
+}
+
+@mixin textstyle-size-14-20() {
+    @include fontfamily-primary-bold();
+    @include font-size(14px);
+    @include line-height(28/14);
+    @include mq(desktop) {
+        @include font-size(20px);
+        @include line-height(24/20);
+    }
+}

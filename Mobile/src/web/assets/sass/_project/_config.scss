@@ -1,0 +1,81 @@
+////
+/// Project configuration
+///
+/// @group Configuration
+////
+
+/// Project breakpoints
+///
+// @include if-parent('.mod-xxx') {  }
+// EwSVG::load('icon-arrow-right', $params = array('title' => 'next'));
+// a[href$='.zip'], a[href$='.rar'], a[href$='.gzip'] {}
+// background-image: embed('/assets/svg/icon-slider-prev-tablet.svg');
+// Project breakpoints
+///
+/// @prop {string} key      Breakpoint name
+/// @prop {string} value    Media query definition
+///
+/// If changed also update S.breakpoints in /_common/js/helpers/breakpoints.js!
+
+
+$breakpoints: (
+    mobilebig: 'only screen and (min-width: #{em(500px)})',
+    tablet: 'only screen and (min-width: #{em(768px)})',
+    tabletbig: 'only screen and (min-width: #{em(863px)})',
+    desktop: 'print, only screen and (min-width: #{em(1025px)})',
+    l: 'print, only screen and (min-width: #{em(1200px)})',
+    xl: 'print, only screen and (min-width: #{em(1440px)})',
+    xxl: 'print, only screen and (min-width: #{em(1840px)})', // 1840
+    print: 'print',
+);
+
+// transitions
+$transition-duration: 0.4s;
+$transition-duration-fast: 0.14s;
+$transition-timing: ease-out;
+// transition: all $transition-duration $transition-timing;
+
+// css code for DEV Livingstyleguide margin-top,padding-left,padding-right
+// typo3 project or live set false!
+$helper-css: false;
+
+// color base // base nur -50!!!
+$color-base-100: #000;
+$color-base-90: #dadada;
+// end
+$color-base-70: #666;
+$color-base-50: #999;
+$color-base-30: #ccc;
+$color-base-10: #e9eaec;
+$color-base-0: #fff;
+
+// color brand
+$color-primary: #adffd1;
+$color-secondary: #39646b;
+$color-third: #5c7e83;
+$color-red: #e2001a;
+$color-light-grey: #f4f4f4;
+$color-text: $color-base-70;
+$color-placeholder: #ddd;
+
+
+// defaults
+$color-standard: $color-base-100;
+$color-bg: $color-base-0;
+$color-error: $color-red;
+$color-focus-tab: $color-base-100;
+$color-placeholder: $color-base-90;
+$color-selection: $color-base-10;
+$color-disabled: $color-base-90;
+$color-bglayer: rgba($color-base-0, 1);
+$color-line: #aaa;
+
+// other
+$shadow-standard: 0 0 10px rgba($color-base-100, 0.2);
+// bottom only
+$shadow-standard-bottom: 0 5px 10px -5px rgba($color-base-100, 0.2);
+// top only
+$shadow-standard-top: 0 5px 10px 5px rgba($color-base-100, 0.2);
+
+// border-radius
+$border-radius: 4px;

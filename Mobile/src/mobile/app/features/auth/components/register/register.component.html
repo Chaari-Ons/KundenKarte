@@ -1,0 +1,77 @@
+
+<ion-content>
+<div class="mod-register">
+
+
+  <h1 class="register-title">
+    Registrierung
+  </h1>
+
+  <form class="mod-form" #registerForm="ngForm">
+    <div class="m-genders">
+      <div class="m-gender">
+        <input type="radio" name="gender" id="weiblich" value="weiblich" required ngModel #gender="ngModel"/>
+        <label for="weiblich">weiblich</label>
+      </div>
+      <div class="m-gender">
+        <input type="radio" name="gender" id="mannlich" value="mannlich" required ngModel #gender="ngModel"/>
+        <label for="mannlich">männlich</label>
+      </div>
+      <div class="m-gender">
+        <input type="radio" name="gender" id="divers" value="divers" required ngModel #gender="ngModel"/>
+        <label for="divers">divers</label>
+      </div>
+      <span class="error" *ngIf="(gender.invalid) && (registerForm.submitted)">Geschlecht ist erforderlich</span>
+
+    </div>
+
+    <div class="m-input is-text">
+      <input type="text" placeholder="Vorname" name="name" required ngModel #name="ngModel" [pattern]="'^[a-zA-Z \-\']+'"/>
+      <span class="error" *ngIf="(name.invalid) && (name.value)">Der Name sollte nur aus Buchstaben bestehen</span>
+      <span class="error" *ngIf="(name.invalid) && (!name.value) && (name.touched || registerForm.submitted)">Vorname ist erforderlich</span>
+    </div>
+    <div class="m-input is-text">
+      <input type="text" placeholder="Nachname" name="lastname" required ngModel #lastname="ngModel" [pattern]="'^[a-zA-Z \-\']+'"/>
+      <span class="error" *ngIf="(lastname.invalid) && (lastname.value)">Der Nachname sollte nur aus Buchstaben bestehen</span>
+      <span class="error" *ngIf="(lastname.invalid) && (!lastname.value) && (lastname.touched || registerForm.submitted)">Nachname ist erforderlich</span>
+    </div>
+    <div class="m-input is-date">
+      <input type="text" placeholder="Geburtsdatum" [value]="date"  name="birthday" ngModel #inputDateText="ngModel"/>
+      <input #inputDate="ngModel" type="date" required (change)="changeDate(inputDate)"  class="is-hided" name="dateOfBirth" id="birthdate" data-date-inline-picker="true" ngModel/>
+
+
+      <label for="birthdate">
+        <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5009 21.8043V7.65957H2.13291V21.8043H19.5009ZM19.5009 2.19574C20.0764 2.19574 20.5775 2.41702 20.9973 2.85957C21.4171 3.30213 21.6338 3.81277 21.6338 4.39149V21.8043C21.6338 22.383 21.4239 22.8936 20.9973 23.3362C20.5707 23.7787 20.0764 24 19.5009 24H2.13291C1.55736 24 1.0563 23.7787 0.636487 23.3362C0.216677 22.8936 0 22.383 0 21.8043V4.39149C0 3.81277 0.209905 3.30213 0.636487 2.85957C1.06307 2.41702 1.55736 2.19574 2.13291 2.19574H3.25015V0H5.38306V2.19574H16.2507V0H18.3837V2.19574H19.5009Z" fill="#39646B"/>
+        </svg>
+
+      </label>
+      <span class="error" *ngIf="(inputDate.invalid) && (registerForm.submitted)">Das Feld Geburtsdatum ist erforderlich</span>
+    </div>
+
+    <div class="m-input is-email">
+      <input email type="email" placeholder="E-Mail" name="email" required ngModel #email="ngModel"  />
+      <span class="error" *ngIf="(email.invalid) && (email.value) && (email.touched)">Sie sollten das E-Mail-Format example@example.com respektieren</span>
+      <span class="error" *ngIf="(email.invalid) && (!email.value) && (email.touched || registerForm.submitted)">Das E-Mail-Feld ist erforderlich</span>
+    </div>
+
+    <div class="m-input is-password">
+      <input type="password" placeholder="Passwort" name="password" required ngModel #password="ngModel" minlength="8" />
+      <span class="error" *ngIf="(password.invalid) && (password.value) && (password.touched)">Das Passwort sollte mindestens 8 Zeichen lang sein.</span>
+      <span class="error" *ngIf="(password.invalid) && (!password.value) && (password.touched || registerForm.submitted)">Das Passwortfeld ist erforderlich</span>
+    </div>
+
+    <input ngModel type="hidden" value="1" name="city"/>
+    <input ngModel type="hidden" value="trusted by.png" name="avatar"/>
+    <input ngModel type="hidden" value="1" name="city"/>
+    <input ngModel type="hidden" value="sfax" name="street"/>
+    <input ngModel type="hidden" value="123" name="streetNumber"/>
+    <div class="m-submit">
+      <input type="submit" value="Account erstellen" (click)="onSave(registerForm)" />
+    </div>
+
+    <a class="m-link" href="/login">Sie haben schon ein Konto?</a>
+
+  </form>
+</div>
+</ion-content>

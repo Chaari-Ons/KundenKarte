@@ -1,0 +1,68 @@
+<div class="mod-add-market">
+  <div class="m-wrapper">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="updateMarketBranch()">
+
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="Name" [nzSpan]="7" nzRequired>Name</nz-form-label>
+        <nz-form-control nzErrorTip="Please Name!" [nzSpan]="12">
+          <input nz-input id="Name" formControlName="name" placeholder="Name" [(ngModel)]="marketBranchObject.name" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="city" [nzSpan]="7" nzRequired>Stadt</nz-form-label>
+        <nz-form-control nzErrorTip="Please Stadt!" [nzSpan]="12">
+          <nz-select
+            [(ngModel)]="city"
+            [compareWith]="compareFn"
+            nzAllowClear
+            nzPlaceHolder="Choose"
+            formControlName="city">
+            <nz-option *ngFor="let option of listCities" [nzValue]="option" [nzLabel]="option.name"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="street" [nzSpan]="7" nzRequired>street</nz-form-label>
+        <nz-form-control nzErrorTip="Please street!" [nzSpan]="12">
+          <input nz-input id="street" formControlName="street" placeholder="Street" [(ngModel)]="marketBranchObject.address.street"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="streetNumber" [nzSpan]="7" nzRequired>streetNumber</nz-form-label>
+        <nz-form-control nzErrorTip="Please streetNumber!" [nzSpan]="12">
+          <input nz-input id="streetNumber" formControlName="streetNumber" placeholder="streetNumber" [(ngModel)]="marketBranchObject.address.street_number"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="zip" [nzSpan]="7" nzRequired>Zip</nz-form-label>
+        <nz-form-control nzErrorTip="Please zip!" [nzSpan]="12">
+          <input nz-input id="zip" formControlName="zip" placeholder="Zip"  [(ngModel)]="marketBranchObject.address.zip"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="longitude" [nzSpan]="7" nzRequired>longitude</nz-form-label>
+        <nz-form-control nzErrorTip="Please longitude!" [nzSpan]="12">
+          <input nz-input id="longitude" formControlName="longitude" placeholder="longitude" [(ngModel)]="marketBranchObject.longitude"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="latitude" [nzSpan]="7" nzRequired>latitude</nz-form-label>
+        <nz-form-control nzErrorTip="Please latitude!" [nzSpan]="12">
+          <input nz-input id="latitude" formControlName="latitude" placeholder="latitude" [(ngModel)]="marketBranchObject.latitude"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field" nz-row class="register-area">
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          <button nz-button nzType="primary">save</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

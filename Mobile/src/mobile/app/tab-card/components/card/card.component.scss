@@ -1,0 +1,130 @@
+@import "./src/mobile/assets/scss/common";
+
+.mod-card {
+	position: relative;
+	padding-bottom: 100px;
+
+	> .m-buttons {
+		text-align: start;
+		padding: 20px;
+		margin-top: 3px;
+		display: flex;
+		justify-content: space-between;
+
+		a {
+			color: $color-text;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			@include font-primary-13-18;
+
+			> .m-back {
+				margin-right: 12px;
+			}
+		}
+	}
+
+	> ion-grid {
+		text-align: center;
+		padding: 0;
+
+		> ion-row {
+			justify-content: center;
+			> ion-col {
+			}
+			>.card {
+				width: 100%;
+				>svg {
+					margin: auto;
+				}
+			}
+
+			>.m-main {
+				>.m-title {
+					@include font-primary-22-30;
+					text-transform: uppercase;
+					color: $color-text;
+					padding: 0 28px;
+					margin: 40px 0 30px;
+				}
+
+				>.m-coupons {
+					display: flex;
+					flex-direction: column;
+					margin: 0 25px;
+					row-gap: 10px;
+
+					>.m-item {
+						width: 100%;
+						background: $color-third;
+						box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+						border-radius: 10px;
+						min-height: 100px;
+						position: relative;
+						overflow: hidden;
+						padding: 14px 10px;
+						z-index: 0;
+						display: flex;
+						gap: 20px;
+
+						&:after {
+							content: '';
+							background-color: $color-sinbad;
+							width: 109px;
+							height: 200px;
+							position: absolute;
+							transform: rotate(25deg);
+							top: -50%;
+							left: -10%;
+							z-index: 0;
+						}
+
+						>.m-discount {
+							flex-shrink: 0;
+							z-index: 1;
+							width: 80px;
+							height: 80px;
+							background: $color-primary;
+							border-radius: 100%;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+
+							>p {
+								color: $color-third;
+								text-transform: uppercase;
+								margin: 0;
+								@include font-primary-15;
+
+
+								&:first-of-type {
+									@include font-primary-25;
+								}
+							}
+						}
+
+						>.m-description {
+							>p {
+								color: $color-base-0;
+								@include font-primary-13-18;
+								text-align: initial;
+								margin: 10px;
+
+								&.sub-text {
+									@include font-primary-10-14;
+								}
+
+								>strong {
+									font-weight: 700;
+									color: $color-primary;
+								}
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+@import "./src/mobile/assets/scss/common";
+
+.mod-brochure {
+	min-height: 100vh;
+	text-align: center;
+	position: relative;
+
+	.m-medias {
+		max-width: 335px;
+		margin: 20px auto;
+		position: relative;
+		min-height: calc(100vh - 136px);
+
+		.m-media {
+			position: absolute;
+			bottom: 0;
+			width: calc(100%);
+			margin: auto;
+		}
+	}
+
+	.m-title {
+		@include font-primary-20-27;
+		text-transform: uppercase;
+		color: $color-text;
+		padding: 26px 0 21px;
+		border-bottom: 2px $color-base-20 solid;
+		max-width: calc(100% - 40px);
+		margin: auto;
+	}
+}

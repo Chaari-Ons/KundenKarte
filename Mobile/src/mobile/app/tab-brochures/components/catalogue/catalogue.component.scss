@@ -1,0 +1,107 @@
+@import "./src/mobile/assets/scss/common";
+
+.mod-catalogue {
+	position: relative;
+
+	> .m-button-back {
+		text-align: start;
+		padding: 20px 20px 0;
+		margin-top: 3px;
+
+		a {
+			color: $color-text;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			margin-left: 10px;
+			@include font-primary-13-18;
+
+			> svg {
+				margin-right: 12px;
+			}
+		}
+	}
+
+	> ion-grid {
+		text-align: center;
+
+		> ion-row {
+			> ion-col {
+				&.m-catalogue {
+					padding: 0;
+
+					> .m-swiper {
+						img {
+							box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+							margin: 20px;
+							max-width: calc(100% - 40px);
+						}
+					}
+				}
+
+				&.m-arrow {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					z-index: 2;
+					max-width: 36px;
+
+					&--left {
+						left: 10px;
+					}
+
+					&--right {
+						right: 10px;
+					}
+
+					> .m-button {
+						width: 36px;
+						height: 36px;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						position: absolute;
+						vertical-align: middle;
+						z-index: 2;
+						cursor: pointer;
+						border-radius: 100%;
+
+						&:after {
+							content: '';
+							width: 36px;
+							height: 36px;
+							background-size: cover;
+							display: block;
+							position: absolute;
+							top: 0;
+						}
+
+						&.swiper-button-next {
+							&:after {
+								background-image: url('../../../../assets/svg/general/swiper-right.svg');
+							}
+
+							&.disabled {
+								&:after {
+									background-image: url('../../../../assets/svg/general/swiper-right-disable.svg');
+								}
+							}
+						}
+
+						&.swiper-button-prev {
+							&:after {
+								background-image: url('../../../../assets/svg/general/swiper-left.svg');
+							}
+
+							&.disabled {
+								&:after {
+									background-image: url('../../../../assets/svg/general/swiper-left-disable.svg');
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

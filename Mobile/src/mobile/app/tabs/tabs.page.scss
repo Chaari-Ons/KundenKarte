@@ -1,0 +1,25 @@
+@import "../../assets/scss/common";
+
+.mod-bars {
+  background: $color-sinbad;
+  --border: 0;
+  height: 80px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+
+  ion-tab-button {
+    &.tab-selected {
+      background: $color-primary;
+    }
+
+    > ion-label {
+      @include font-primary-13-18;
+      color: $color-text;
+    }
+
+    > .icon {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 8px;
+    }
+  }
+}

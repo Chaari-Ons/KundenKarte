@@ -1,0 +1,28 @@
+@import "./src/web/assets/sass/_common.scss";
+
+.mod-add-user {
+  text-align: initial;
+
+  > .m-wrapper {
+
+    >.m-form {
+      width: 57%;
+      margin: auto;
+      margin-bottom: 10px;
+
+      >.m-form-field {
+
+        &--center {
+          text-align: center;
+        }
+
+        input {
+          height: 45px;
+          width: 100%;
+          border: 1px solid #39646b;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import "./src/mobile/assets/scss/common";
+
+.lay-login {
+	min-height: 100vh;
+	padding: 170px 38px 0;
+
+	> .background {
+		background-image: url('../../../../../assets/images/background-login.jpg');
+		background-size: cover;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		z-index: -1;
+		background-repeat: no-repeat;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: rgba(0, 57, 67, 0.6);
+		}
+	}
+
+	> .l-wrapper {
+		margin: auto;
+
+		> .l-header {
+			margin-bottom: 30px;
+
+			h1 {
+				color: $color-base-0;
+				text-transform: uppercase;
+				font-weight: 400;
+				@include font-primary-22-30;
+				text-align: center;
+			}
+		}
+
+		>.m-error {
+			color: red;
+			text-align: center;
+			font-size: 16px;
+			@include fontfamily-primary-bold;
+		}
+
+		> .mod-form {
+			> .m-submit {
+				margin: 30px 0;
+				padding: 0;
+			}
+
+			> a {
+				display: block;
+				color: $color-base-0;
+				@include font-primary-13-18;
+				text-align: center;
+				max-width: 240px;
+				margin: 0 auto 30px;
+
+				&.m-forget-password {
+					margin-bottom: 120px;
+				}
+			}
+
+			> p {
+				display: block;
+				color: $color-base-0;
+				@include font-primary-13-18;
+				text-align: center;
+				max-width: 240px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+

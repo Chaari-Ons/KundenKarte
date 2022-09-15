@@ -1,0 +1,36 @@
+@import "./src/web/assets/sass/_common.scss";
+
+.mod-register {
+  min-width: auto;
+  padding: 50px 10px;
+
+  @include mq(desktop) {
+    min-width: 650px;
+    padding: 50px 0;
+  }
+
+  > .m-wrapper {
+    padding-top: 5%;
+
+    > * {
+      text-align: center;
+    }
+
+    > .m-subtitle {
+      > h2 {
+        letter-spacing: 0.4em;
+        margin-bottom: 7px;
+      }
+    }
+
+    > .m-title {
+      > h1 {
+        margin-bottom: 5px;
+      }
+    }
+
+    > .m-para {
+      margin-bottom: 22px;
+    }
+  }
+}

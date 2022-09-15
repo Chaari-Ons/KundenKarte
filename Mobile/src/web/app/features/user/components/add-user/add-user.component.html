@@ -1,0 +1,71 @@
+<div class="mod-add-user">
+  <div class="m-wrapper">
+    <form class="m-form" nz-form [formGroup]="validateForm" (ngSubmit)="saveUser()">
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="name" [nzSpan]="7" nzRequired>Name</nz-form-label>
+        <nz-form-control nzErrorTip="Please name!" [nzSpan]="12">
+          <input nz-input id="name" formControlName="name" placeholder="Name"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="lastname" [nzSpan]="7" nzRequired>Lastname</nz-form-label>
+        <nz-form-control nzErrorTip="Please lastname!" [nzSpan]="12">
+          <input nz-input id="lastname" formControlName="lastname" placeholder="lastname"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="email" [nzSpan]="7" nzRequired>Email</nz-form-label>
+        <nz-form-control nzErrorTip="Please email!" [nzSpan]="12">
+          <input nz-input id="email" formControlName="email" placeholder="email"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="password" [nzSpan]="7" nzRequired>Password</nz-form-label>
+        <nz-form-control nzErrorTip="Please password!" [nzSpan]="12">
+          <input [type]="passwordVisible ? 'text' : 'password'" nz-input
+                 id="password" formControlName="password" placeholder="password" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="gender" [nzSpan]="7" nzRequired>Gender</nz-form-label>
+        <nz-form-control nzErrorTip="Please gender!" [nzSpan]="12">
+          <nz-radio-group formControlName="gender">
+            <label nz-radio nzValue="female">female</label>
+            <label nz-radio nzValue="male">male</label>
+          </nz-radio-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="date" [nzSpan]="7" nzRequired>Date birthday</nz-form-label>
+        <nz-form-control nzErrorTip="Please birthday!" [nzSpan]="12">
+          <nz-date-picker formControlName="date" [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
+
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="street" [nzSpan]="7" nzRequired>street</nz-form-label>
+        <nz-form-control nzErrorTip="Please street!" [nzSpan]="12">
+          <input nz-input id="street" formControlName="street" placeholder="Street"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="streetNumber" [nzSpan]="7" nzRequired>streetNumber</nz-form-label>
+        <nz-form-control nzErrorTip="Please streetNumber!" [nzSpan]="12">
+          <input nz-input id="streetNumber" formControlName="streetNumber" placeholder="streetNumber"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="m-form-field">
+        <nz-form-label class="m-form-label" nzFor="zip" [nzSpan]="7" nzRequired>Zip</nz-form-label>
+        <nz-form-control nzErrorTip="Please zip!" [nzSpan]="12">
+          <input nz-input id="zip" formControlName="zip" placeholder="Zip"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="m-form-field register-area m-form-field--center" nz-row >
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          <button nz-button nzType="primary"> Registrieren </button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

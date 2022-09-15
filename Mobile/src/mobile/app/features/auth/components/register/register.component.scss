@@ -1,0 +1,25 @@
+@import "./src/mobile/assets/scss/common";
+
+.mod-register {
+	background: $color-light-grey;
+	padding: 96px 38px 0;
+	min-height: 100vh;
+
+	.register-title {
+		text-align: center;
+		color: $color-text;
+		text-transform: uppercase;
+		@include fontfamily-primary();
+		margin-bottom: 30px;
+	}
+
+	a {
+		display: block;
+		color: $color-secondary;
+		@include font-primary-13-18;
+		text-align: center;
+		max-width: 240px;
+		margin: 0 auto 30px;
+		text-decoration: 1px $color-secondary solid;
+	}
+}

@@ -1,0 +1,67 @@
+
+// Custom Theming for NG-ZORRO
+// For more information: https://ng.ant.design/docs/customize-theme/en
+@import "../../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+// Override less variables to here
+// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
+
+@primary-color: #adffd1;
+
+
+@layout-header-background: #39646b;
+@layout-sider-background: @layout-header-background;
+@menu-dark-bg: @layout-header-background;
+@btn-primary-color: #39646b;
+@text-color: #666666;
+
+@menu-dark-selected-item-icon-color: #39646b;
+@menu-dark-selected-item-text-color: #39646b;
+@layout-header-color : @btn-primary-color;
+
+.ant-pagination-item-active,
+.ant-pagination-item-active:hover {
+  border-color: #39646b;
+  a {
+    color: #39646b;
+  }
+}
+
+.ant-btn-primary:focus {
+  color: @btn-primary-color;
+  border-color: @primary-color;
+  background: @primary-color;
+}
+
+.ant-btn-primary:hover {
+  color: @primary-color;
+  border-color: @btn-primary-color;
+  background: @btn-primary-color;
+}
+
+.ant-modal-body {
+  .ant-modal-confirm-btns {
+    .ant-btn {
+      &.ng-star-inserted:hover {
+        color: @btn-primary-color;
+        border-color: @btn-primary-color;
+      }
+      &.ant-btn-dangerous:hover {
+        color:white;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.ant-radio-inner::after {
+  background-color: @btn-primary-color;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: @btn-primary-color;
+}
+
+.ant-radio-checked::after {
+  border: 1px solid @btn-primary-color;
+}

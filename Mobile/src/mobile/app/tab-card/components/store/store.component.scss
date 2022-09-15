@@ -1,0 +1,118 @@
+@import "./src/mobile/assets/scss/common";
+
+
+.m-button {
+  padding: 20px 20px 0;
+  max-width: 64px;
+  margin-left: auto;
+}
+
+.m-pin {
+  text-align: center;
+}
+
+.m-title {
+  @include font-primary-22-30;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-base-70;
+  margin: 20px 0 30px;
+}
+.m-add-address {
+  text-align: center;
+  min-height: 50px;
+  >button {
+    @include font-primary-15-21-bold;
+    color: $color-base-70;
+    background: $color-primary;
+    border-radius: 40px;
+    padding: 13px 25px;
+    text-transform: uppercase;
+    border: 0;
+    margin: auto;
+    display: inline-block;
+  }
+}
+
+.m-address-list {
+
+
+  >.m-item {
+    display: flex;
+    align-items: center;
+    background: $color-base-0;
+    margin: 10px 20px;
+    border-radius: 40px;
+    justify-content: space-between;
+
+    >span {
+      flex: 1;
+      @include font-primary-13-18();
+      color: $color-text;
+    }
+
+    >svg {
+      &:first-of-type {
+        margin: 0 10px 0 15px;
+      }
+      &:last-of-type {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.m-market-list {
+  background: $color-third;
+  padding: 40px 20px 140px;
+  margin-top: 40px;
+
+  .m-title {
+    @include font-primary-22-30;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-base-0;
+    margin: 0;
+  }
+
+  .m-search-layer {
+    display: flex;
+    padding: 30px 18px 40px;
+    .m-search {
+      background: white;
+      padding: 13px 15px;
+      border: 0;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      flex: 1;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    .m-search-btn {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      padding: 10px 15px;
+      background: $color-primary;
+      border: 0;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  .m-markets {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    >img {
+      max-width: 105px;
+      max-height: 105px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+}

@@ -1,0 +1,26 @@
+@import "./src/web/assets/sass/_common.scss";
+
+.m-upload {
+  margin-top: 5px;
+  .m-btn-upload {
+    border: 1px solid #39646b;
+    cursor: pointer;
+    height: 32px;
+    padding: 4px 15px;
+    border-radius: 2px;
+    background: #fff;
+    color: #39646b;
+
+    > i {
+      padding-right: 9px;
+    }
+  }
+
+  .m-file-name {
+    color: #666;
+    display: block;
+    margin-top: 10px;
+  }
+
+}
+
